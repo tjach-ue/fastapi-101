@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food log for {{ username }}</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>Food</th>
+            <th>Added</th>
+            <th>Servings</th>
+            <th>Calories (kcal)</th>
+        </thead>
+        <tbody>
+    {% for item in food_entries %}
+            <tr>
+                <td>{{ item.food_name }}</td>
+                <td>{{ item.date_added }}</td>
+                <td>{{ item.number_servings }} x {{ item.serving_size }}</td>
+                <td>{{ item.total_calories }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

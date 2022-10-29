@@ -1,2 +1,7 @@
 requests
 bcrypt
+jinja2
+BeautifulSoup4
+python-jose[cryptography]
+passlib
+python-multipart
