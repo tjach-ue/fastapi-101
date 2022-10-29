@@ -157,10 +157,6 @@ async def create_food_entry(entry: FoodEntry, current_user: User = Depends(get_c
 
 @app.get("/", response_model=List[FoodEntry])
 async def get_foods_for_user(current_user: User = Depends(get_current_active_user)):
-    """
-    This endpoint does not take a user_id anymore, make it so that the
-    food entries are filtered on logged in user.
-    """
     return [
         food_entry
         for food_entry in food_log.values()
